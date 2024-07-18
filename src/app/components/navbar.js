@@ -2,7 +2,8 @@
 import React,{useState,useEffect} from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import LogoNavbar from '../assets/imgTerritorial/logoTerritorial.svg';
+import logo from '../assets/imgTerritorial/logo.svg';
 import {FiSearch,FiUser} from '../assets/icons/vander'
 
 export default function Navbar({navClass,logolight,menuClass}){
@@ -13,14 +14,14 @@ export default function Navbar({navClass,logolight,menuClass}){
     useEffect(() => {
         activateMenu()
         window.addEventListener("scroll", () => {
-          setScroll(window.scrollY > 50);
+            setScroll(window.scrollY > 50);
         });
         const closeDropdown =()=>{
             setModal(false)
         }
         document.addEventListener("mousedown", closeDropdown);
         window.scrollTo(0, 0);
-      }, []);
+        },);
         const toggleMenu = () => {
             setisMenu(!isMenu);
             if (document.getElementById("navigation")) {
@@ -114,14 +115,17 @@ export default function Navbar({navClass,logolight,menuClass}){
             }
         }
     return(
-        <>
-         <header id="topnav" className={`${scroll ? "nav-sticky" :""} ${navClass}`}>
+        <>   
+        <header id="topnav" className={`${scroll ? "nav-sticky" :""} ${navClass}`}>
             <div className="container">
                 {logolight === true ? 
                     <Link className="logo" href="/">
                         <span className="logo-light-mode">
-                            <Image src='/images/logo-dark.png' width={132} height={32} className="l-dark" alt=""/>
-                            <Image src='/images/logo-light.png' width={132} height={32} className="l-light" alt=""/>
+                            {/* <Image src='/images/logo-dark.png' width={132} height={32} className="l-dark" alt=""/>
+                            <Image src='/images/logo-light.png' width={132} height={32} className="l-light" alt=""/> */}
+                            <Image  width={132} height={80} className="l-light" alt="" src= {logo}/>
+                            <Image  width={140} height={72} className="l-dark" alt="" src= {LogoNavbar}/>
+                            {/* <Image  width={132} height={32} className="l-light" alt="" src= {LogoNavbar}/> */}
                         </span>
                         <Image src='/images/logo-light.png' width={132} height={32} className="logo-dark-mode" alt=""/>
                     </Link> :
@@ -140,11 +144,10 @@ export default function Navbar({navClass,logolight,menuClass}){
                                 <span></span>
                             </div>
                         </Link>
-                       
                     </div>
                 </div>
 
-                <ul className="buy-button list-inline mb-0">
+                {/* <ul className="buy-button list-inline mb-0">
                     <li className="list-inline-item ps-1 mb-0">
                         <div className="dropdown">
                             <button type="button" className="dropdown-toggle btn btn-sm btn-icon btn-pills btn-primary" onClick={()=>setModal(!modal)}>
@@ -166,11 +169,12 @@ export default function Navbar({navClass,logolight,menuClass}){
                         <Link href="/auth-login" className="btn btn-sm btn-icon btn-pills btn-primary"><FiUser className="icons"/></Link>
                     </li>
                 </ul>
-        
+                */}
+
                 <div id="navigation" style={{ display: isMenu ? 'block' : 'none' }}>
                     <ul className={menuClass}>
                         <li className="has-submenu parent-menu-item">
-                            <Link href="#">Home</Link><span className="menu-arrow"></span>
+                            <Link href="#">Inicio</Link><span className="menu-arrow"></span>
                             <ul className="submenu">
                                 <li><Link href="/" className="sub-menu-item">Hero One</Link></li>
                                 <li><Link href="/index-two" className="sub-menu-item">Hero Two</Link></li>
@@ -181,11 +185,11 @@ export default function Navbar({navClass,logolight,menuClass}){
                                 <li><Link href="/index-seven" className="sub-menu-item">Hero Seven</Link></li>
                             </ul>
                         </li>
-                        <li><Link href="/buy" className="sub-menu-item">Buy</Link></li>
+                        <li><Link href="/buy" className="sub-menu-item">Propiedades</Link></li>
                         
-                        <li><Link href="/sell" className="sub-menu-item">Sell</Link></li>
+                        {/* <li><Link href="/sell" className="sub-menu-item">Sell</Link></li> */}
         
-                        <li className="has-submenu parent-parent-menu-item">
+                        {/* <li className="has-submenu parent-parent-menu-item">
                             <Link href="#">Listing</Link><span className="menu-arrow"></span>
                             <ul className="submenu">
                                 <li className="has-submenu parent-menu-item"><Link href="#"> Grid View </Link><span className="submenu-arrow"></span>
@@ -207,9 +211,14 @@ export default function Navbar({navClass,logolight,menuClass}){
                                     </ul>  
                                 </li>
                             </ul>
-                        </li>
+                        </li> */}
+
+                        <li><Link href="/blog-detail" className="sub-menu-item">Asesores</Link></li>
+
+                        {/* se puede poner el video 360 con info de contactate con nosotros */}
+                        {/* <li><Link href="/comingsoon" className="sub-menu-item">Comingsoon</Link></li> */}
         
-                        <li className="has-submenu parent-parent-menu-item">
+                        {/* <li className="has-submenu parent-parent-menu-item">
                             <Link href="#">Pages</Link><span className="menu-arrow"></span>
                             <ul className="submenu">
                                 <li><Link href="/aboutus" className="sub-menu-item">About Us</Link></li>
@@ -244,9 +253,9 @@ export default function Navbar({navClass,logolight,menuClass}){
                                     </ul>  
                                 </li>
                             </ul>
-                        </li>
+                        </li> */}
                         
-                        <li><Link href="/contactus" className="sub-menu-item">Contact Us</Link></li>
+                        <li><Link href="/contactus" className="sub-menu-item">Contactanos</Link></li>
                     </ul>
                 </div>
             </div>

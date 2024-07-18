@@ -14,11 +14,12 @@ export default function VideoTwo(){
                 <i className="mdi mdi-play mdi-24px text-primary"></i>
             </Link>
         </div>
+        {/* se pone el id del video de you tube */}
         <ModalVideo
             channel="youtube"
             youtube={{ mute: 0, autoplay: 0 }}
             isOpen={isOpen}
-            videoId="yba7hPeTSjk"
+            videoId="RkpUcsm8Uw0"
             onClose={() => setOpen(false)} 
         />
         </>
