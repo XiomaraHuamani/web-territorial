@@ -24,7 +24,7 @@ export default function SelectTwo(){
         { value: '7', label: '5000' },
     ]
     return(
-        <div className="mt-4">
+        <div className="mt-5">
             <ul className="nav nav-pills bg-white shadow border-bottom p-3 flex-row d-md-inline-flex nav-justified mb-0 rounded-top-3 position-relative overflow-hidden" id="pills-tab" role="tablist">
                 <li className="nav-item m-1">
                     <Link className={`${activeIndex === 0 ? 'active' : '' } nav-link py-2 px-4  rounded-3 fw-medium`} href="#" scroll={false} onClick={()=>setActiveIndex(0)} >
@@ -59,7 +59,6 @@ export default function SelectTwo(){
                                             </div>
                                         </div>
                                     </div>
-                                    
                                     <div className="col-lg-3 col-md-6 col-12">
                                         <div className="mb-3">
                                             <label className="form-label fs-6">Select Categories :</label>
